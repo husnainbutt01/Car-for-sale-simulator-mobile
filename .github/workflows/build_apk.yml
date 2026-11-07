@@ -1,0 +1,15 @@
+name: "Godot Android APK Build"
+on: [push, workflow_dispatch]
+
+jobs:
+  export-android:
+    name: Android Export
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Godot Android Export
+        uses: dulvui/godot-android-export@v4
+        with:
+          godot-version: 4.3.0 # Agar aap Godot 4 use kar rahe hain
